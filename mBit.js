@@ -1,7 +1,7 @@
 //ユーザー名を入力したか
-let isWriteUsername = false;
+let hasUsername = false;
 //チャンネルコードを入力したか
-let isWriteChannelCode = false;
+let hasChannelCode = false;
 
 //チャンネル一覧
 const TEAM_A_SUMOU_WITCH_PLAYER = "TEAM_A_SUMOU_WITCH_PLAYER";
@@ -40,7 +40,7 @@ let isWatch = false;
 
 async function connect()
 {
-	if (!isWriteUsername || !isWriteChannelCode)
+	if (!hasUsername || !hasChannelCode)
 	{
 		alert("ユーザー名とチャンネルコードの入力をしてください。");
 		return;
@@ -116,22 +116,22 @@ async function getWitchPlayerWait()
 
 function clickName()
 {
-	if (!isWriteUsername)
+	if (!hasUsername)
 	{
-		let text = document.getElementById("userName");
-		text.value = "";
+//		let text = document.getElementById("userName");
+//		text.value = "";
 
-		isWriteUsername = true;
+		hasUsername = true;
 	}
 }
 function clickChannel()
 {
-	if (!isWriteChannelCode)
+	if (!hasChannelCode)
 	{
-		let text = document.getElementById("channelCode");
-		text.value = "";
+//		let text = document.getElementById("channelCode");
+//		text.value = "";
 
-		isWriteChannelCode = true;
+		hasChannelCode = true;
 	}
 }
 
@@ -158,8 +158,7 @@ function setPlayer(msg)
 
 async function sendingData()
 {
-	let userName = document.getElementById("userName").value;
-	let username = userName;
+	let username = document.getElementById("userName").value;
 	
 	while (true)
 	{
